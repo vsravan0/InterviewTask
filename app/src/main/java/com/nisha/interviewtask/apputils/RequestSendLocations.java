@@ -1,4 +1,4 @@
-package miles.driver.interviewtask.apputils;
+package com.nisha.interviewtask.apputils;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,12 +1,12 @@
-package miles.driver.interviewtask.adapter;
+package com.nisha.interviewtask.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import miles.driver.interviewtask.fragments.FragmentAnimation;
-import miles.driver.interviewtask.fragments.FragmentGraph;
-import miles.driver.interviewtask.fragments.FragmentLocation;
+import com.nisha.interviewtask.fragments.FragmentAnimation;
+import com.nisha.interviewtask.fragments.FragmentGraph;
+import com.nisha.interviewtask.fragments.FragmentLocation;
 
 /**
  * Created by sravan on 23/07/17.

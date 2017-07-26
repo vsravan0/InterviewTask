@@ -1,18 +1,11 @@
-package miles.driver.interviewtask.apputils;
+package com.nisha.interviewtask.apputils;
 
-
-import java.util.Map;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.Field;
-import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
-/**
- * Created by Shiva Pothana on 4/3/2017.
- */
 
 public interface WebServiceAPI {
 

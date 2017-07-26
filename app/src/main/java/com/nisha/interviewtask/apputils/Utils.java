@@ -1,4 +1,4 @@
-package miles.driver.interviewtask.apputils;
+package com.nisha.interviewtask.apputils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,6 +15,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Utils {
 
+
+    /*
+    Tradionla Way ::
+
+    1-> Need to create BG thread
+    2-> to take support Htpp Library ->> HTTP calls
+    3-> need to parse response
+    4 -> Main Thread ( to show SOMETHING )
+
+    RETRO FIT :
+     */
     public static boolean  isLogin(Context ctx){
         SharedPreferences pref= PreferenceManager.getDefaultSharedPreferences(ctx);
         return pref.getBoolean(Constants.KEY_LOGIN,false);

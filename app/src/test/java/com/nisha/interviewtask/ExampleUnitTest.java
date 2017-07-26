@@ -1,4 +1,4 @@
-package miles.driver.interviewtask;
+package com.nisha.interviewtask;
 
 import org.junit.Test;
 

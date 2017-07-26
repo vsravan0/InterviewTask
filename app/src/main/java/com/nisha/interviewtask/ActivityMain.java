@@ -1,4 +1,4 @@
-package miles.driver.interviewtask;
+package com.nisha.interviewtask;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -7,8 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import miles.driver.interviewtask.adapter.PagerAdapter;
-import miles.driver.interviewtask.apputils.LocationUpdateServices;
+import com.nisha.interviewtask.adapter.PagerAdapter;
+import com.nisha.interviewtask.apputils.LocationUpdateServices;
 
 public class ActivityMain extends AppCompatActivity  {
     private TabLayout mTabLayout;

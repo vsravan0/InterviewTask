@@ -1,4 +1,4 @@
-package miles.driver.interviewtask.apputils;
+package com.nisha.interviewtask.apputils;
 
 
 import android.Manifest;
@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -22,11 +21,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
 
-
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -143,9 +138,9 @@ public class LocationUpdateServices extends Service implements LocationListener{
         request.setChannel("#Android");
         request.setIconEmoji(":ghost");
 
-        Map<String, String> map = request.getMapObject(request);
+       // Map<String, String> map = request.getMapObject(request);
 
-        Call<Void> resultCall = mService.sendLocation(request.getChannel(),
+        Call<Void> resultCall = mService.sendLocation("sample channel",
                 request.getText(),
                 request.getUserName(),
                 request.getName(),request.getLatitude(),request.getLongitude(),request.getIconEmoji());

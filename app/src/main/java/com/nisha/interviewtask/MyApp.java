@@ -1,4 +1,4 @@
-package miles.driver.interviewtask;
+package com.nisha.interviewtask;
 
 import android.app.Application;
 
@@ -8,7 +8,7 @@ import com.uber.sdk.rides.client.SessionConfiguration;
 
 import java.util.Arrays;
 
-import miles.driver.interviewtask.apputils.Constants;
+import com.nisha.interviewtask.apputils.Constants;
 
 /**
  * Created by sravan on 23/07/17.

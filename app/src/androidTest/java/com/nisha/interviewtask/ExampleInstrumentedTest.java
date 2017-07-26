@@ -1,4 +1,4 @@
-package miles.driver.interviewtask;
+package com.nisha.interviewtask;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("miles.driver.interviewtask", appContext.getPackageName());
+        assertEquals("com.nisha.interviewtask", appContext.getPackageName());
     }
 }

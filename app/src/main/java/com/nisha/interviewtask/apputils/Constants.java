@@ -1,4 +1,4 @@
-package miles.driver.interviewtask.apputils;
+package com.nisha.interviewtask.apputils;
 
 /**
  * Created by sravan on 23/07/17.

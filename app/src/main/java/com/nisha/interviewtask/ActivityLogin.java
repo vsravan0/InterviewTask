@@ -1,15 +1,10 @@
-package miles.driver.interviewtask;
+package com.nisha.interviewtask;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,9 +15,10 @@ import com.uber.sdk.android.core.auth.LoginCallback;
 import com.uber.sdk.android.core.auth.LoginManager;
 import com.uber.sdk.core.auth.AccessToken;
 
-import miles.driver.interviewtask.apputils.Utils;
+import com.nisha.interviewtask.apputils.Utils;
 
-public class ActivityLogin extends AppCompatActivity implements LoginCallback,View.OnClickListener {
+public class ActivityLogin extends AppCompatActivity implements
+        LoginCallback,View.OnClickListener {
 
     private boolean mIsLoginSuccess;
     private Button mBtnLogin;

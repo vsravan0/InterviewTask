@@ -1,8 +1,6 @@
-package miles.driver.interviewtask.fragments;
+package com.nisha.interviewtask.fragments;
 
-import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,7 +19,7 @@ import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 
-import miles.driver.interviewtask.R;
+import com.nisha.interviewtask.R;
 
 public class FragmentGraph extends Fragment {
 
