@@ -14,18 +14,16 @@
         android:roundIcon="@mipmap/myappicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <service android:name=".apputils.LocationUpdateServices" />
-
         <activity
-            android:name=".ActivityMain"
+            android:name=".ActivityLogin"
             android:configChanges="orientation|keyboardHidden|screenSize"
 
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
         <activity
-            android:name=".ActivityLogin"
+            android:name=".ActivityMain"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/FullscreenTheme">
             <intent-filter>

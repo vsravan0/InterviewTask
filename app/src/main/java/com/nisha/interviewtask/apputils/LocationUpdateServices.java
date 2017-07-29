@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
@@ -34,7 +35,6 @@ import retrofit2.Response;
 public class LocationUpdateServices extends Service implements LocationListener{
 
     private static final String TAG = LocationUpdateServices.class.getSimpleName();
-
     public GoogleApiClient mGoogleApiClient;
     public LocationRequest mLocationRequest;
     public Location userlocation;
@@ -42,29 +42,34 @@ public class LocationUpdateServices extends Service implements LocationListener{
     private LocationManager locationManager;
     private Context ctx;
 
-
     @Override
     public void onCreate() {
         super.onCreate();
         ctx = getApplicationContext();
-        //createLocationRequest();
+       // createLocationRequest();
         mService= Utils.getWebServiceObj();
+        Log.v(TAG," onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.v(TAG," onStartCommand");
 
         Criteria myCriteria = new Criteria();
         myCriteria.setAccuracy(Criteria.ACCURACY_COARSE);
         myCriteria.setPowerRequirement(Criteria.POWER_LOW);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         String myProvider = locationManager.getBestProvider(myCriteria, true);
-        if (myProvider == null)
+        if (myProvider == null) {
             myProvider = LocationManager.NETWORK_PROVIDER;
-
+            Log.v(TAG," myProvider network");
+        }
 
         if (locationManager.getAllProviders().contains(myProvider)) {
            startLocationUpdates(myProvider);
+            Log.v(TAG," startLocationUpdates ");
+        }else{
+            Log.v(TAG," provider error ");
         }
 
         return START_STICKY;
@@ -77,10 +82,18 @@ public class LocationUpdateServices extends Service implements LocationListener{
         if (locationManager != null) {
             locationManager.removeUpdates(this);
         }
+
+        Log.v(TAG," provider onDestroy ");
     }
 
 
+
+
+
+
     protected void startLocationUpdates(String provider) {
+
+
 
         if (ContextCompat.checkSelfPermission(ctx,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -88,7 +101,6 @@ public class LocationUpdateServices extends Service implements LocationListener{
 
             locationManager.requestLocationUpdates(provider,
                     Constants.LOCATION_TIME_INTERVAL, 0, this);
-            //   LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
         }
         Log.e(TAG, "Location update started ..............: ");
     }
@@ -110,11 +122,9 @@ public class LocationUpdateServices extends Service implements LocationListener{
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
     }
 
-
-
-
     @Override
     public void onLocationChanged(Location location) {
+
         userlocation=location;
 
         Handler h=new Handler(Looper.getMainLooper());
@@ -155,6 +165,9 @@ public class LocationUpdateServices extends Service implements LocationListener{
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Log.e(TAG,t.getMessage());
+                Log.e(TAG, "onFailure ");
+
+
             }
         });
 
@@ -185,7 +198,7 @@ public class LocationUpdateServices extends Service implements LocationListener{
 
     @Override
     public void onProviderDisabled(String provider) {
-
+        Log.v(TAG," onProviderDisabled ");
     }
     public class MyThread extends Thread{
 
@@ -202,4 +215,6 @@ public class LocationUpdateServices extends Service implements LocationListener{
                     sendBroadcast(intent);
                 }
     }
+
+
 }

@@ -12,26 +12,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="In Back ground we are sending \n recived updates to given web service"
+            android:padding="10dp"
             />
 
     <TextView
-        android:id="@+id/id_location_latitude"
+        android:id="@+id/id_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/title_location"
+        android:padding="10dp"
+        android:textSize="20sp"
       />
-        <TextView
-            android:id="@+id/id_location_longtitude"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
 
-        <TextView
-            android:id="@+id/id_location_altitude"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
 
 
     </LinearLayout>
